@@ -10,13 +10,17 @@ import jakarta.persistence.*
 */
 @Entity
 @Table(name = "test")
-data class Test(
+class Test(
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name = "test_id") val testId: Long,
 
-        @Column(name = "test_name") val testName: String
+        testName: String
 ) {
+
+    @Column(name = "test_name")
+    var testName = testName
+        protected set
 
     constructor(testName: String) : this(0, testName)
 
